@@ -505,7 +505,7 @@
                 <label class="input-label">비밀번호</label>
                 <input type="password" id="login-pw" class="login-input" placeholder="비밀번호를 입력하세요">
             </div>
-            <button class="login-btn" onclick="checkLogin()">로그인</button>
+            <button class="login-btn" id="btn-login-action">로그인</button>
             <div class="login-footer">Copyright © HEROS_B. All Rights Reserved.</div>
         </div>
     </div>
@@ -513,18 +513,18 @@
     <!-- 메인 앱 -->
     <div id="main-app">
         <header class="main-header">
-            <div class="header-logo" onclick="showDashboard()">CHEMILEADER</div>
+            <div class="header-logo" id="btn-home-action">CHEMILEADER</div>
             <div style="display: flex; align-items: center;">
                 <input type="text" id="top-search-input" class="search-box" placeholder="팀원, 부서 검색">
-                <button class="logout-btn" onclick="logout()">로그아웃</button>
+                <button class="logout-btn" id="btn-logout-action">로그아웃</button>
             </div>
         </header>
 
         <div class="app-body">
             <nav class="main-sidebar">
                 <ul class="main-menu">
-                    <li class="menu-item" id="menu-eval" onclick="showEval()">📊 CHEMIBRATION</li>
-                    <li class="menu-item" id="menu-feedback" onclick="showFeedback()">💬 CHEMISTREE</li>
+                    <li class="menu-item" id="menu-eval">📊 CHEMIBRATION</li>
+                    <li class="menu-item" id="menu-feedback">💬 CHEMISTREE</li>
                 </ul>
                 <ul class="member-list-sidebar" id="member-list-sidebar"></ul>
                 <div class="leader-profile">
@@ -680,7 +680,7 @@
                                         <div id="file-list-mobile" class="file-list-mobile"></div>
                                         <div class="file-donut-wrapper">
                                             <div id="file-donut-menu" class="file-donut-menu"></div>
-                                            <button class="file-donut-toggle" onclick="toggleFileDonut()">📂</button>
+                                            <button class="file-donut-toggle" id="btn-file-toggle">📂</button>
                                         </div>
                                     </div>
                                     <div class="card">
@@ -775,7 +775,7 @@
                                         </div>
                                     </div>
                                     <div style="text-align:right;">
-                                        <button class="login-btn" style="width:auto; padding:12px 30px; margin:0;" onclick="generateEvidence()">✨ AI 행동 사례 찾기</button>
+                                        <button class="login-btn" style="width:auto; padding:12px 30px; margin:0;" id="btn-generate-evidence">✨ AI 행동 사례 찾기</button>
                                     </div>
                                 </div>
 
@@ -790,8 +790,8 @@
                                                 <div class="ev-text" id="ev-text-str-1">(위 버튼을 눌러 AI 추천 사례를 확인하세요)</div>
                                             </div>
                                             <div class="ev-controls">
-                                                <button class="btn-xs" onclick="reexplore('str', 1)" disabled>🔄 재탐색</button>
-                                                <button class="btn-xs btn-select" id="btn-sel-str-1" onclick="toggleSelection('str', 1)" disabled>선택</button>
+                                                <button class="btn-xs" id="btn-re-str-1" disabled>🔄 재탐색</button>
+                                                <button class="btn-xs btn-select" id="btn-sel-str-1" disabled>선택</button>
                                             </div>
                                         </div>
                                         <div class="evidence-box" id="ev-box-str-2">
@@ -800,8 +800,8 @@
                                                 <div class="ev-text" id="ev-text-str-2">(위 버튼을 눌러 AI 추천 사례를 확인하세요)</div>
                                             </div>
                                             <div class="ev-controls">
-                                                <button class="btn-xs" onclick="reexplore('str', 2)" disabled>🔄 재탐색</button>
-                                                <button class="btn-xs btn-select" id="btn-sel-str-2" onclick="toggleSelection('str', 2)" disabled>선택</button>
+                                                <button class="btn-xs" id="btn-re-str-2" disabled>🔄 재탐색</button>
+                                                <button class="btn-xs btn-select" id="btn-sel-str-2" disabled>선택</button>
                                             </div>
                                         </div>
 
@@ -812,8 +812,8 @@
                                                 <div class="ev-text" id="ev-text-imp-1">(위 버튼을 눌러 AI 추천 사례를 확인하세요)</div>
                                             </div>
                                             <div class="ev-controls">
-                                                <button class="btn-xs" onclick="reexplore('imp', 1)" disabled>🔄 재탐색</button>
-                                                <button class="btn-xs btn-select" id="btn-sel-imp-1" onclick="toggleSelection('imp', 1)" disabled>선택</button>
+                                                <button class="btn-xs" id="btn-re-imp-1" disabled>🔄 재탐색</button>
+                                                <button class="btn-xs btn-select" id="btn-sel-imp-1" disabled>선택</button>
                                             </div>
                                         </div>
                                         <div class="evidence-box" id="ev-box-imp-2">
@@ -822,8 +822,8 @@
                                                 <div class="ev-text" id="ev-text-imp-2">(위 버튼을 눌러 AI 추천 사례를 확인하세요)</div>
                                             </div>
                                             <div class="ev-controls">
-                                                <button class="btn-xs" onclick="reexplore('imp', 2)" disabled>🔄 재탐색</button>
-                                                <button class="btn-xs btn-select" id="btn-sel-imp-2" onclick="toggleSelection('imp', 2)" disabled>선택</button>
+                                                <button class="btn-xs" id="btn-re-imp-2" disabled>🔄 재탐색</button>
+                                                <button class="btn-xs btn-select" id="btn-sel-imp-2" disabled>선택</button>
                                             </div>
                                         </div>
 
@@ -834,8 +834,8 @@
                                                 <div class="ev-text" id="ev-text-gro-1">(위 버튼을 눌러 AI 추천 사례를 확인하세요)</div>
                                             </div>
                                             <div class="ev-controls">
-                                                <button class="btn-xs" onclick="reexplore('gro', 1)" disabled>🔄 재탐색</button>
-                                                <button class="btn-xs btn-select" id="btn-sel-gro-1" onclick="toggleSelection('gro', 1)" disabled>선택</button>
+                                                <button class="btn-xs" id="btn-re-gro-1" disabled>🔄 재탐색</button>
+                                                <button class="btn-xs btn-select" id="btn-sel-gro-1" disabled>선택</button>
                                             </div>
                                         </div>
                                         <div class="evidence-box" id="ev-box-gro-2">
@@ -844,14 +844,14 @@
                                                 <div class="ev-text" id="ev-text-gro-2">(위 버튼을 눌러 AI 추천 사례를 확인하세요)</div>
                                             </div>
                                             <div class="ev-controls">
-                                                <button class="btn-xs" onclick="reexplore('gro', 2)" disabled>🔄 재탐색</button>
-                                                <button class="btn-xs btn-select" id="btn-sel-gro-2" onclick="toggleSelection('gro', 2)" disabled>선택</button>
+                                                <button class="btn-xs" id="btn-re-gro-2" disabled>🔄 재탐색</button>
+                                                <button class="btn-xs btn-select" id="btn-sel-gro-2" disabled>선택</button>
                                             </div>
                                         </div>
                                     </div>
                                     
                                     <div style="text-align:center; margin-top:24px;">
-                                        <button id="btn-generate-feedback" class="login-btn" style="width:auto; padding:12px 40px;" disabled onclick="handleGenerateFinalFeedback()">
+                                        <button id="btn-generate-feedback" class="login-btn" style="width:auto; padding:12px 40px;" disabled>
                                             🧾 최종 피드백 생성
                                         </button>
                                     </div>
@@ -874,8 +874,6 @@
 
     <script>
         // [1] 데이터 및 변수 선언
-        // ... (FEEDBACK_LIBRARY, KEYWORD_MAP, KEY_TO_GROUP, PROGRAM_SUGGESTIONS, styleMap, teamDB 등 기존 데이터 유지) ...
-        // (이전 코드 블록의 데이터 선언부는 그대로 유지됩니다)
         var FEEDBACK_LIBRARY = {
           "keywordGroups": [
             { "groupName": "소통 및 커뮤니케이션", "tags": ["소통", "대화", "공유", "연락", "피드백", "경청", "설득", "보고", "미팅", "협업"] },
@@ -892,8 +890,7 @@
             { "groupName": "일반", "tags": ["일반", "보편", "기본"] }
           ],
           "behavioralSamples": [
-            // ... (기존 샘플 데이터 유지) ...
-            { "groupName": "소통 및 커뮤니케이션", "type": "strength", "tags": ["소통", "공유", "협업"], "text": "복잡한 프로젝트 이슈를 팀원들이 이해하기 쉬운 언어로 정리하여 신속하게 공유함으로써 혼선을 줄였습니다." },
+             { "groupName": "소통 및 커뮤니케이션", "type": "strength", "tags": ["소통", "공유", "협업"], "text": "복잡한 프로젝트 이슈를 팀원들이 이해하기 쉬운 언어로 정리하여 신속하게 공유함으로써 혼선을 줄였습니다." },
             { "groupName": "소통 및 커뮤니케이션", "type": "strength", "tags": ["경청", "대화"], "text": "회의 시간 동안 동료의 의견을 끝까지 경청하고 핵심을 요약해주며 논의가 긍정적인 방향으로 흐르도록 도왔습니다." },
             { "groupName": "소통 및 커뮤니케이션", "type": "strength", "tags": ["설득", "미팅"], "text": "유관 부서와의 미팅에서 상충되는 의견을 조율하고 합리적인 대안을 제시하여 원만한 합의를 이끌어냈습니다." },
             { "groupName": "소통 및 커뮤니케이션", "type": "improvement", "tags": ["소통", "공유"], "text": "이슈 발생 시 혼자 해결하려다 공유 시점이 늦어지는 경우가 있어 초기 단계에서의 신속한 공유가 필요합니다." },
@@ -996,7 +993,7 @@
         };
 
         var teamDB = {
-            '박태희': {
+             '박태희': {
                 job: 'Data Scientist', rank: '선임', avatar: '👩🏻‍💻', years: '5년 3개월',
                 keywords: ['#데이터분석', '#통계', '#논리적'],
                 feedbackStyle: { directness: '직설적', focus: '과업 중심', tone: '논리적' },
@@ -1035,7 +1032,44 @@
                     { id: "interview", label: "심층 면담 기록", url: "#", icon: "📝" }
                 ]
             },
-            '박재현': {
+            '박재원': {
+                job: 'Software Eng.', rank: '사원', avatar: '👩🏻‍💻', years: '3년',
+                keywords: ['#개발', '#클라우드', '#성실'],
+                feedbackStyle: { directness: '직설적', focus: '과업 중심', tone: '부드러움' },
+                skills: [ { name: 'React', per: 75, color: '#551D83' }, { name: 'AWS', per: 60, color: '#70C0E6' } ],
+                strengths: ['빠른 프로토타이핑', '성실한 태도', '문제 해결 능력'], weaknesses: ['아키텍처 설계', '코드 리뷰 참여', '문서화'],
+                growthStages: [
+                    { label: "초기 (Onboarding)", desc: "레거시 코드 파악 및 단순 버그 수정" },
+                    { label: "중기 (Developing)", desc: "신규 기능 모듈 단위 개발 및 배포" },
+                    { label: "현재 (Performing)", desc: "MSA 아키텍처 설계 참여 및 클라우드 운영" }
+                ],
+                growthDesc: "입사 초기 적응기를 거쳐, 최근 기술 습득 속도가 빨라지며 가파른 성장 곡선을 그리고 있습니다.",
+                history: [
+                    { date:'23.04', title:'백엔드 리드 역할 수행', desc:'API 서버 구조 개선' },
+                    { date:'22.08', title:'클라우드 마이그레이션 참여', desc:'IDC to AWS' },
+                    { date:'21.02', title:'입사', desc:'플랫폼 개발' }
+                ],
+                kpiTotal: 85, kpiDesc: "신규 기능 3종 배포 완료",
+                coreValues: [ {n:'Customer', s:85}, {n:'Sustainability', s:80}, {n:'Agility', s:85}, {n:'Passion', s:90}, {n:'Collaboration', s:88} ],
+                currRole: 'Software Eng.', goalRole: 'Architect', 
+                compGoals: ['Kubernetes 운영 마스터', 'MSA 아키텍처 설계 경험 축적', '오픈소스 프로젝트 기여'],
+                bizGoals: ['시스템 가용성 99.99% 유지', '레거시 시스템 클라우드 전환 가속화'],
+                projectLog: { succ: "사용자 요청 기능 2주내 배포", imp: "테스트 코드 커버리지 부족" },
+                growthRoadmap: [
+                    { task: "Kubernetes 클러스터 운영 경험 공유", checked: false },
+                    { task: "사내 해커톤 참가", checked: true },
+                    { task: "오픈소스 기여 1건 이상", checked: false }
+                ],
+                files: [
+                    { id: "hackathon", label: "해커톤 수상 내역", url: "#", icon: "🏆" },
+                    { id: "perf2023", label: "2023 성과평가서", url: "#", icon: "📊" },
+                    { id: "aws_saa", label: "AWS SAA 자격증", url: "#", icon: "☁️" },
+                    { id: "git_stats", label: "Github 커밋 통계", url: "#", icon: "🐙" },
+                    { id: "tech_blog", label: "기술 블로그 포스팅", url: "#", icon: "✍️" },
+                    { id: "code_review", label: "코드 리뷰 모음", url: "#", icon: "💻" }
+                ]
+            },
+             '박재현': {
                 job: 'AI Researcher', rank: '책임', avatar: '👨🏻‍🔬', years: '8년 1개월',
                 keywords: ['#AI', '#딥러닝', '#혁신'],
                 feedbackStyle: { directness: '완곡함', focus: '과업 중심', tone: '논리적' },
@@ -1111,43 +1145,6 @@
                     { id: "agile_guide", label: "애자일 가이드북", url: "#", icon: "🏃" }
                 ]
             },
-            '박재원': {
-                job: 'Software Eng.', rank: '사원', avatar: '👩🏻‍💻', years: '3년',
-                keywords: ['#개발', '#클라우드', '#성실'],
-                feedbackStyle: { directness: '직설적', focus: '과업 중심', tone: '부드러움' },
-                skills: [ { name: 'React', per: 75, color: '#551D83' }, { name: 'AWS', per: 60, color: '#70C0E6' } ],
-                strengths: ['빠른 프로토타이핑', '성실한 태도', '문제 해결 능력'], weaknesses: ['아키텍처 설계', '코드 리뷰 참여', '문서화'],
-                growthStages: [
-                    { label: "초기 (Onboarding)", desc: "레거시 코드 파악 및 단순 버그 수정" },
-                    { label: "중기 (Developing)", desc: "신규 기능 모듈 단위 개발 및 배포" },
-                    { label: "현재 (Performing)", desc: "MSA 아키텍처 설계 참여 및 클라우드 운영" }
-                ],
-                growthDesc: "입사 초기 적응기를 거쳐, 최근 기술 습득 속도가 빨라지며 가파른 성장 곡선을 그리고 있습니다.",
-                history: [
-                    { date:'23.04', title:'백엔드 리드 역할 수행', desc:'API 서버 구조 개선' },
-                    { date:'22.08', title:'클라우드 마이그레이션 참여', desc:'IDC to AWS' },
-                    { date:'21.02', title:'입사', desc:'플랫폼 개발' }
-                ],
-                kpiTotal: 85, kpiDesc: "신규 기능 3종 배포 완료",
-                coreValues: [ {n:'Customer', s:85}, {n:'Sustainability', s:80}, {n:'Agility', s:85}, {n:'Passion', s:90}, {n:'Collaboration', s:88} ],
-                currRole: 'Software Eng.', goalRole: 'Architect', 
-                compGoals: ['Kubernetes 운영 마스터', 'MSA 아키텍처 설계 경험 축적', '오픈소스 프로젝트 기여'],
-                bizGoals: ['시스템 가용성 99.99% 유지', '레거시 시스템 클라우드 전환 가속화'],
-                projectLog: { succ: "사용자 요청 기능 2주내 배포", imp: "테스트 코드 커버리지 부족" },
-                growthRoadmap: [
-                    { task: "Kubernetes 클러스터 운영 경험 공유", checked: false },
-                    { task: "사내 해커톤 참가", checked: true },
-                    { task: "오픈소스 기여 1건 이상", checked: false }
-                ],
-                files: [
-                    { id: "hackathon", label: "해커톤 수상 내역", url: "#", icon: "🏆" },
-                    { id: "perf2023", label: "2023 성과평가서", url: "#", icon: "📊" },
-                    { id: "aws_saa", label: "AWS SAA 자격증", url: "#", icon: "☁️" },
-                    { id: "git_stats", label: "Github 커밋 통계", url: "#", icon: "🐙" },
-                    { id: "tech_blog", label: "기술 블로그 포스팅", url: "#", icon: "✍️" },
-                    { id: "code_review", label: "코드 리뷰 모음", url: "#", icon: "💻" }
-                ]
-            },
             '하유림': {
                 job: 'UX Designer', rank: '선임', avatar: '👩🏻‍🎨', years: '4년',
                 keywords: ['#UX', '#디자인', '#공감'],
@@ -1197,6 +1194,65 @@
 
         // --- Functions ---
 
+        // Initialize Event Listeners after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Attach event listeners
+            var loginBtn = document.getElementById('btn-login-action');
+            if(loginBtn) loginBtn.addEventListener('click', checkLogin);
+            
+            var homeBtn = document.getElementById('btn-home-action');
+            if(homeBtn) homeBtn.addEventListener('click', showDashboard);
+
+            var logoutBtn = document.getElementById('btn-logout-action');
+            if(logoutBtn) logoutBtn.addEventListener('click', logout);
+
+            var menuEval = document.getElementById('menu-eval');
+            if(menuEval) menuEval.addEventListener('click', showEval);
+
+            var menuFeedback = document.getElementById('menu-feedback');
+            if(menuFeedback) menuFeedback.addEventListener('click', showFeedback);
+
+            var btnGenEv = document.getElementById('btn-generate-evidence');
+            if(btnGenEv) btnGenEv.addEventListener('click', generateEvidence);
+            
+            var btnReStr1 = document.getElementById('btn-re-str-1');
+            if(btnReStr1) btnReStr1.addEventListener('click', function(){ reexplore('str', 1) });
+            var btnSelStr1 = document.getElementById('btn-sel-str-1');
+            if(btnSelStr1) btnSelStr1.addEventListener('click', function(){ toggleSelection('str', 1) });
+
+            var btnReStr2 = document.getElementById('btn-re-str-2');
+            if(btnReStr2) btnReStr2.addEventListener('click', function(){ reexplore('str', 2) });
+            var btnSelStr2 = document.getElementById('btn-sel-str-2');
+            if(btnSelStr2) btnSelStr2.addEventListener('click', function(){ toggleSelection('str', 2) });
+
+            var btnReImp1 = document.getElementById('btn-re-imp-1');
+            if(btnReImp1) btnReImp1.addEventListener('click', function(){ reexplore('imp', 1) });
+            var btnSelImp1 = document.getElementById('btn-sel-imp-1');
+            if(btnSelImp1) btnSelImp1.addEventListener('click', function(){ toggleSelection('imp', 1) });
+
+            var btnReImp2 = document.getElementById('btn-re-imp-2');
+            if(btnReImp2) btnReImp2.addEventListener('click', function(){ reexplore('imp', 2) });
+            var btnSelImp2 = document.getElementById('btn-sel-imp-2');
+            if(btnSelImp2) btnSelImp2.addEventListener('click', function(){ toggleSelection('imp', 2) });
+
+            var btnReGro1 = document.getElementById('btn-re-gro-1');
+            if(btnReGro1) btnReGro1.addEventListener('click', function(){ reexplore('gro', 1) });
+            var btnSelGro1 = document.getElementById('btn-sel-gro-1');
+            if(btnSelGro1) btnSelGro1.addEventListener('click', function(){ toggleSelection('gro', 1) });
+
+            var btnReGro2 = document.getElementById('btn-re-gro-2');
+            if(btnReGro2) btnReGro2.addEventListener('click', function(){ reexplore('gro', 2) });
+            var btnSelGro2 = document.getElementById('btn-sel-gro-2');
+            if(btnSelGro2) btnSelGro2.addEventListener('click', function(){ toggleSelection('gro', 2) });
+
+            var btnGenFinal = document.getElementById('btn-generate-feedback');
+            if(btnGenFinal) btnGenFinal.addEventListener('click', handleGenerateFinalFeedback);
+            
+            var fileToggle = document.getElementById('btn-file-toggle');
+            if(fileToggle) fileToggle.addEventListener('click', toggleFileDonut);
+        });
+
+
         function checkLogin() {
             var id = document.getElementById('login-id').value;
             var pw = document.getElementById('login-pw').value;
@@ -1208,7 +1264,6 @@
                 alert('ID: HEROSB, PW: LGCHEM 입니다.');
             }
         }
-        document.getElementById('login-pw').addEventListener('keypress', function(e) { if(e.key==='Enter') checkLogin(); });
 
         function logout() {
             document.getElementById('main-app').style.display = 'none';
@@ -1741,7 +1796,11 @@
             var feedbackMsg = "";
 
             // (1) 도입 인사
-            feedbackMsg += "이번 평가 기간 동안 " + name + "님의 기여와 성장을 함께 돌아보고자 합니다.\n\n";
+            var intros = [
+                "이번 평가 기간 동안 " + name + "님의 기여와 성장을 함께 돌아보고자 합니다.",
+                "이번 리뷰에서는 지난 기간 동안 보여주신 " + name + "님의 강점과 성장 가능성을 중심으로 말씀드리고자 합니다."
+            ];
+            feedbackMsg += intros[Math.floor(Math.random() * intros.length)] + "\n\n";
 
             // (2) 강점 제시 & (3) 강점 사례 연결
             if (strInput) {
@@ -1751,33 +1810,34 @@
                 if (strEv1) {
                     if (!strEv1.endsWith('.')) strEv1 += '.';
                     var templates1 = [
-                        "이러한 역량은 해당 사례에서도 분명하게 드러났습니다.",
-                        name + "님의 역량은 이 사례를 통해서도 잘 나타났습니다.",
-                        "이 경험은 " + name + "님의 강점을 확인할 수 있는 근거가 되었습니다."
+                        "이러한 역량은 " + strEv1 + " 사례에서도 분명하게 드러났습니다.",
+                        name + "님의 역량은 " + strEv1 + " 경험을 통해서도 잘 나타났습니다.",
+                        "이 경험(" + strEv1 + ")은 " + name + "님의 강점을 확인할 수 있는 근거가 되었습니다."
                     ];
-                    feedbackMsg += strEv1 + " " + templates1[Math.floor(Math.random() * templates1.length)] + " ";
+                    feedbackMsg += templates1[Math.floor(Math.random() * templates1.length)] + " ";
                 }
                 if (strEv2) {
                     if (!strEv2.endsWith('.')) strEv2 += '.';
                     var templates2 = [
-                        "이러한 사례는 " + name + "님의 역량을 잘 보여주는 예시라고 생각합니다.",
-                        "해당 사례는 이러한 강점이 실제 업무에서도 발휘되었음을 보여줍니다.",
-                        "이 사례는 " + name + "님의 강점이 실무에서 어떻게 작동하는지를 보여주는 좋은 예입니다."
+                        "또한 " + strEv2 + " 사례는 " + name + "님의 역량을 잘 보여주는 예시라고 생각합니다.",
+                        "해당 사례(" + strEv2 + ")는 이러한 강점이 실제 업무에서도 발휘되었음을 보여줍니다.",
+                        "이 사례(" + strEv2 + ")는 " + name + "님의 강점이 실무에서 어떻게 작동하는지를 보여주는 좋은 예입니다."
                     ];
-                    feedbackMsg += "\n또한 " + strEv2 + " " + templates2[Math.floor(Math.random() * templates2.length)];
+                    feedbackMsg += "\n" + templates2[Math.floor(Math.random() * templates2.length)];
                 }
                 feedbackMsg += "\n\n";
             }
 
             // (4) 보완점 제시 & (5) 보완점 사례 연결
             if (impInput) {
-                // 접속사 정리
+                // 접속사 정리 (반면, 다만 등 중복 제거)
                 var cleanImp = impInput;
-                if (cleanImp.startsWith("반면 ")) cleanImp = cleanImp.substring(3);
-                else if (cleanImp.startsWith("다만 ")) cleanImp = cleanImp.substring(3);
-                else if (cleanImp.startsWith("반면,")) cleanImp = cleanImp.substring(3).trim();
-                else if (cleanImp.startsWith("다만,")) cleanImp = cleanImp.substring(3).trim();
-
+                var prefixes = ["반면,", "반면", "다만,", "다만", "하지만,", "하지만"];
+                for (var i=0; i<prefixes.length; i++) {
+                    if (cleanImp.startsWith(prefixes[i])) {
+                        cleanImp = cleanImp.substring(prefixes[i].length).trim();
+                    }
+                }
                 if (!cleanImp.endsWith('.')) cleanImp += '.';
                 
                 var impStart = Math.random() > 0.5 ? "반면 " : "다만 ";
@@ -1791,7 +1851,7 @@
                         "이 사례는 업무 과정에서 어떤 부분을 보완하면 좋을지를 알려주는 근거가 됩니다.",
                         "이 경험은 " + name + "님이 향후 개선을 통해 더 성장할 수 있는 여지를 보여줍니다."
                     ];
-                    feedbackMsg += impEv1 + " " + impTemplates[Math.floor(Math.random() * impTemplates.length)] + " ";
+                    feedbackMsg += impTemplates[Math.floor(Math.random() * impTemplates.length)] + " ";
                 }
                 if (impEv2) {
                      if (!impEv2.endsWith('.')) impEv2 += '.';
@@ -1802,19 +1862,20 @@
 
             // (6) 성장 방향 및 마무리
             var growthIntros = [
-                "향후 발전을 위해서는 ",
-                "앞으로의 커리어 목표를 고려하면 ",
-                "지속적인 성장 관점에서 보면 ",
-                "앞으로의 방향성을 생각해보면 "
+                "향후 발전을 위해서는",
+                "앞으로의 커리어 목표를 고려하면",
+                "지속적인 성장 관점에서 보면",
+                "앞으로의 방향성을 생각해보면"
             ];
             var selectedIntro = growthIntros[Math.floor(Math.random() * growthIntros.length)];
 
             if (groInput) {
                 if(!groInput.endsWith('.')) groInput += '.';
-                feedbackMsg += selectedIntro + groInput + " ";
+                feedbackMsg += selectedIntro + " " + groInput + " ";
             }
             
             var finalGroEv = groEv1 || groEv2;
+            // Fallback if user didn't select anything but entered text
             if (!finalGroEv && groInput) {
                  var autoSug = buildGrowthSuggestions(currentMember, groInput);
                  finalGroEv = autoSug.gro1;
@@ -1823,13 +1884,13 @@
             if (finalGroEv) {
                 if (!finalGroEv.endsWith('.')) finalGroEv += '.';
                 var growthBridges = [
-                     "이 목표를 실현하기 위해서는 ",
-                     "이를 보다 체계적으로 준비하기 위해 ",
-                     "이를 뒷받침할 수 있는 실질적 방법으로는 ",
-                     "이를 실행 단계로 옮기기 위해 "
+                     "이 목표를 실현하기 위해서는",
+                     "이를 보다 체계적으로 준비하기 위해",
+                     "이를 뒷받침할 수 있는 실질적 방법으로는",
+                     "이를 실행 단계로 옮기기 위해"
                 ];
                 var selectedBridge = growthBridges[Math.floor(Math.random() * growthBridges.length)];
-                feedbackMsg += selectedBridge + finalGroEv + "\n";
+                feedbackMsg += selectedBridge + " " + finalGroEv + "\n";
             } else {
                 feedbackMsg += "\n";
             }
